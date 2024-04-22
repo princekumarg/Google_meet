@@ -18,6 +18,14 @@ var peer = new Peer(undefined, {
     host: "/",
     port: "3030",
 });
+var peer = new Peer({
+    host: 'https://google-meet-lx8o.onrender.com', // Replace with your PeerJS server domain
+    port: 443, // Use the appropriate port for your server, typically 443 for HTTPS
+    secure: true, // Set to true if your server uses HTTPS
+    path: '/peerjs', // Path to the PeerJS server
+    // Other options as needed
+});
+
 
 let myVideoStream;
 const peers = {};
@@ -104,7 +112,7 @@ const cancel = () => {
 
 const copy = async() => {
     const roomid = document.getElementById("roomid").innerText;
-    await navigator.clipboard.writeText("http://localhost:3030/join/" + roomid);
+    await navigator.clipboard.writeText("https://google-meet-lx8o.onrender.com/join/" + roomid);
 };
 const invitebox = () => {
     $("#getCodeModal").modal("show");
